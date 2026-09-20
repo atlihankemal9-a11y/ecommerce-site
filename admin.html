@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Store | Admin Girişi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="login-card" id="loginCard">
+      <a class="logo" href="index.html">nova<span>.</span></a>
+      <p class="eyebrow">YÖNETİCİ PANELİ</p>
+      <h1>Hoş geldin.</h1>
+      <p class="muted">Mağazanı yönetmek için giriş yap.</p>
+      <form id="loginForm" novalidate>
+        <label for="email">E-posta</label>
+        <input id="email" type="email" autocomplete="username" placeholder="admin@nova.store" required>
+        <label for="password">Şifre</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+        <p class="form-error" id="loginError" role="alert"></p>
+        <button class="button" type="submit">Giriş yap <span>→</span></button>
+      </form>
+      <a class="back-link" href="index.html">← Mağazaya dön</a>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <header class="dashboard-head">
+        <div><a class="logo" href="index.html">nova<span>.</span></a><p class="eyebrow">YÖNETİM PANELİ</p></div>
+        <button class="logout" id="logout">Çıkış yap</button>
+      </header>
+      <div class="welcome"><div><p class="eyebrow">GENEL BAKIŞ</p><h1>Mağazan hazır.</h1><p class="muted">Ürünlerini ve siparişlerini buradan takip edebilirsin.</p></div><a class="button" href="index.html">Mağazayı görüntüle ↗</a></div>
+      <div class="stats"><article><span>Toplam ürün</span><strong>6</strong><small>Aktif katalog</small></article><article><span>Bugünkü sipariş</span><strong>12</strong><small class="positive">↑ %18 geçen haftaya göre</small></article><article><span>Bu ay ciro</span><strong>₺24.850</strong><small>Son 30 gün</small></article></div>
+      <section class="panel"><div class="panel-head"><div><p class="eyebrow">SON ÜRÜNLER</p><h2>Ürün kataloğu</h2></div><button class="outline-button" id="addProduct">+ Ürün ekle</button></div><div class="table-wrap"><table><thead><tr><th>Ürün</th><th>Kategori</th><th>Fiyat</th><th>Durum</th></tr></thead><tbody id="productTable"></tbody></table></div></section>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
