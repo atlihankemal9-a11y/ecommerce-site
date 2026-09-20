@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nova Store — modern ve seçkin yaşam ürünleri." />
+  <title>Nova Store | Modern Yaşam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="announcement">Ücretsiz kargo · 750 TL üzeri siparişlerde</div>
+    <nav class="nav container" aria-label="Ana navigasyon">
+      <a class="logo" href="#top" aria-label="Nova Store ana sayfa">nova<span>.</span></a>
+      <div class="nav-links">
+        <a href="#urunler">Yeni gelenler</a>
+        <a href="#kategoriler">Kategoriler</a>
+        <a href="#hikaye">Hikayemiz</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" id="searchToggle" aria-label="Arama"><span>⌕</span></button>
+        <button class="icon-button cart-button" id="cartToggle" aria-label="Sepeti aç">▢<b id="cartCount">0</b></button>
+        <button class="menu-button" id="menuToggle" aria-label="Menüyü aç">☰</button>
+      </div>
+    </nav>
+    <div class="search-bar container" id="searchBar">
+      <input id="searchInput" type="search" placeholder="Ürün ara..." aria-label="Ürün ara" />
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">SEÇİLMİŞ YAŞAM ÜRÜNLERİ</p>
+        <h1>Günlük hayatın<br /><em>güzel</em> detayları.</h1>
+        <p class="hero-text">Zamansız tasarım, özenli üretim ve sana iyi hissettiren küçük dokunuşlar.</p>
+        <a href="#urunler" class="button button-dark">Koleksiyonu keşfet <span>→</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div><div class="arch"></div><div class="hero-product">✿</div>
+        <span class="art-label">SS / 24<br />COLLECTION</span>
+      </div>
+    </section>
+
+    <section class="ticker"><div>DOĞAL MALZEMELER <span>✦</span> YAVAŞ TASARIM <span>✦</span> İYİ HİSSETTİREN ÜRÜNLER <span>✦</span> DOĞAL MALZEMELER <span>✦</span></div></section>
+
+    <section class="section container" id="urunler">
+      <div class="section-heading"><div><p class="eyebrow">SENİN İÇİN SEÇTİK</p><h2>Favoriler</h2></div><a href="#urunler" class="text-link">Tümünü gör <span>↗</span></a></div>
+      <div class="filters" role="group" aria-label="Ürün kategorileri">
+        <button class="filter active" data-category="Tümü">Tümü</button><button class="filter" data-category="Ev">Ev</button><button class="filter" data-category="Bakım">Bakım</button><button class="filter" data-category="Aksesuar">Aksesuar</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="category-section container" id="kategoriler">
+      <div class="section-heading"><div><p class="eyebrow">KEŞFET</p><h2>Yaşam alanın için</h2></div></div>
+      <div class="category-grid"><a class="category-card cat-home" href="#urunler"><span>01</span><strong>Ev & Yaşam</strong><i>↗</i></a><a class="category-card cat-care" href="#urunler"><span>02</span><strong>Bakım Ritüelleri</strong><i>↗</i></a><a class="category-card cat-accessory" href="#urunler"><span>03</span><strong>Aksesuar</strong><i>↗</i></a></div>
+    </section>
+
+    <section class="story container" id="hikaye"><div class="story-art"><div class="story-circle">N</div></div><div class="story-copy"><p class="eyebrow">NOVA'YI TANI</p><h2>Az eşya,<br /><em>çok his.</em></h2><p>Nova, daha az ama daha iyi şeylerle yaşam alanını ve rutinlerini güzelleştirmek için kuruldu. Her ürünümüzü sana uzun süre eşlik etsin diye seçiyoruz.</p><a class="text-link" href="#hikaye">Hikayemizi oku <span>↗</span></a></div></section>
+
+    <section class="newsletter"><div class="container newsletter-inner"><div><p class="eyebrow">NOVA'DAN NOTLAR</p><h2>İlham kutuna gelsin.</h2></div><form id="newsletterForm"><label class="sr-only" for="email">E-posta adresin</label><input id="email" type="email" placeholder="E-posta adresin" required /><button class="button button-dark" type="submit">Kayıt ol →</button></form></div></section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş sepeti" aria-hidden="true"><div class="drawer-head"><h2>Sepetin</h2><button id="cartClose" aria-label="Sepeti kapat">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div><span>Toplam</span><strong id="cartTotal">₺0</strong></div><button class="button button-dark checkout" id="checkout">Ödemeye geç →</button></div></aside><div class="overlay" id="overlay"></div>
+  <footer class="footer"><div class="container footer-inner"><a class="logo" href="#top">nova<span>.</span></a><p>İyi hissettiren detaylar.</p><small>© 2024 Nova Store</small></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
