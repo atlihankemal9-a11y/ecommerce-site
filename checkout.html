@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nova Store güvenli ödeme sayfası">
+  <title>Nova Store | Güvenli Ödeme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+  <header class="payment-header"><a class="logo" href="index.html">nova<span>.</span></a><span>🔒 Güvenli ödeme</span></header>
+  <main class="payment-layout">
+    <section class="payment-card">
+      <a class="back-link" href="index.html">← Mağazaya dön</a>
+      <p class="eyebrow">ÖDEME BİLGİLERİ</p>
+      <h1>Kart bilgilerin</h1>
+      <p class="muted">Kart bilgilerin bu demo sayfasında saklanmaz.</p>
+      <form id="paymentForm" novalidate>
+        <label for="cardName">Kart üzerindeki ad soyad</label>
+        <input id="cardName" autocomplete="cc-name" required placeholder="Ad Soyad">
+        <label for="cardNumber">Kart numarası</label>
+        <input id="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="19" required placeholder="1234 5678 9012 3456">
+        <div class="form-row"><div><label for="expiry">Son kullanma</label><input id="expiry" inputmode="numeric" autocomplete="cc-exp" maxlength="5" required placeholder="AA/YY"></div><div><label for="cvc">CVC</label><input id="cvc" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required placeholder="123"></div></div>
+        <p class="secure-note">🔒 Ödeme bilgileri şifreli ödeme sağlayıcısına iletilmelidir.</p>
+        <button class="pay-button" type="submit">Güvenli ödemeyi tamamla <span id="payTotal">₺0</span></button>
+        <p class="form-error" id="paymentError" role="alert"></p>
+      </form>
+    </section>
+    <aside class="order-summary"><p class="eyebrow">SİPARİŞ ÖZETİ</p><h2>Sepetin</h2><div id="summaryItems"></div><div class="summary-total"><span>Toplam</span><strong id="summaryTotal">₺0</strong></div></aside>
+  </main>
+  <script src="payment.js"></script>
+</body>
+</html>

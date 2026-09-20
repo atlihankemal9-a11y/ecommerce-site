@@ -33,8 +33,11 @@ function closeCart() { document.getElementById('cartDrawer').classList.remove('o
 document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); renderProducts(button.dataset.category === 'Tümü' ? products : products.filter(item => item.category === button.dataset.category)); }));
 document.getElementById('searchToggle').addEventListener('click', () => { document.getElementById('searchBar').classList.toggle('open'); document.getElementById('searchInput').focus(); });
 document.getElementById('searchInput').addEventListener('input', event => { const term = event.target.value.toLocaleLowerCase('tr-TR'); renderProducts(products.filter(item => `${item.name} ${item.description}`.toLocaleLowerCase('tr-TR').includes(term))); });
-document.getElementById('cartToggle').addEventListener('click', openCart); document.getElementById('cartClose').addEventListener('click', closeCart); document.getElementById('overlay').addEventListener('click', closeCart);
+document.getElementById('cartToggle').addEventListener('click', openCart);
+document.getElementById('cartClose').addEventListener('click', closeCart);
+document.getElementById('overlay').addEventListener('click', closeCart);
 document.getElementById('menuToggle').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
 document.getElementById('newsletterForm').addEventListener('submit', event => { event.preventDefault(); event.target.innerHTML = '<p style="margin:15px 0;font-size:13px">Teşekkürler! Nova notları yolda ✦</p>'; });
-document.getElementById('checkout').addEventListener('click', () => alert(cart.length ? 'Demo ödeme sayfasına yönlendiriliyorsun.' : 'Önce sepetine bir ürün ekle.'));
-renderProducts(); renderCart();
+document.getElementById('checkout').addEventListener('click', () => { if (!cart.length) { alert('Önce sepetine bir ürün ekle.'); return; } window.location.href = 'checkout.html'; });
+renderProducts();
+renderCart();
